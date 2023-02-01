@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 - Slider</title>
+    <!-- ==== Googles Fonts , Icons, CSS ==== -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/01f099256f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="loading-screen">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="loader">
+            <g transform="translate(20 50)">
+            <circle cx="0" cy="0" r="6" fill="#008fd5">
+                <animateTransform attributeName="transform" type="scale" begin="-0.375s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+            </circle>
+            </g><g transform="translate(40 50)">
+            <circle cx="0" cy="0" r="6" fill="#f58220">
+                <animateTransform attributeName="transform" type="scale" begin="-0.25s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+            </circle>
+            </g><g transform="translate(60 50)">
+            <circle cx="0" cy="0" r="6" fill="#008fd5">
+                <animateTransform attributeName="transform" type="scale" begin="-0.125s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+            </circle>
+            </g><g transform="translate(80 50)">
+            <circle cx="0" cy="0" r="6" fill="#f58220">
+                <animateTransform attributeName="transform" type="scale" begin="0s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+            </circle>
+            </g>
+        </svg>
+    </div>
+
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <!-- ===== Slides ======  ..: -->
+    <div class="slides">
+        <div class="slide active">
+            <div class="slideContainer">
+                <!-- <div class="shape-1"></div> -->
+                <img src="./img/fitness-shape.png" alt="shape" class="shape-1">
+                <div class="model-1"></div>
+                <div class="content">
+                    <h1>Slide 1</h1>
+                    <article>
+                        <p>Lorem ipsum dolor sit amet consectetur</p>
+                        <p>sit amet consectetur</p>
+                    </article>
+                    <a href="javascript:;">Explore Now</a>
+                        <!-- add to Anki -->
+                </div>
+            </div>
+        </div>
+        <!-- end of slide  -->
+        <div class="slide">
+            <div class="slideContainer">
+                <img src="./img/free-shape.png" alt="shape" class="shape-2">
+                <div class="model-2"></div>
+                <div class="content">
+                    <h1>Slide 2</h1>
+                    <p>Ladipisicing elit. Tempora, accusantium?</p>
+                    <a href="javascript:;">Explore Now</a>
+                        <!-- add to Anki -->
+                </div>
+            </div>
+        </div>
+        <!-- end of slide  -->
+        <div class="slide">
+            <div class="slideContainer">
+                <img src="./img/yoga-shape.png" alt="shape" class="shape-3">
+                <div class="model-3"></div>
+                <div class="content">
+                    <h1>Slide 3</h1>
+                    <p>Dolor sit amet consectetur adipisicing elit</p>
+                    <a href="javascript:;">Explore Now</a>
+                        <!-- add to Anki -->
+                </div>
+            </div>
+        </div>
+        <!-- end of slide  -->
+        <div class="slide">
+            <div class="slideContainer">
+                <img src="./img/boxing-shape.png" alt="shape" class="shape-4">
+                <div class="model-4"></div>
+                <div class="content">
+                    <h1>Slide 4</h1>
+                    <p>Dolor sit amet consectetur adipisicing elit</p>
+                    <a href="javascript:;">Explore Now</a>
+                        <!-- add to Anki -->
+                </div>
+            </div>
+        </div>
+        <!-- end of slide  -->
+
+        <div class="controls">
+            <div class="prev">
+                <i class="fa fa-arrow-left"></i>
+            </div>
+            <div class="next">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </div>
+        <!-- end of controls -->
+        <div class="indicatorWrapper">
+            <div class="indicatorContainer"></div>
+        </div>
+    </div>
+
+    <section></section>
+    <script src="script.js"></script>
+</body>
+</html>
