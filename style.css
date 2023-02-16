@@ -254,20 +254,20 @@ nav {
 
 .slide:nth-child(1){
             /* add to Anki, selector */
-background: url(./img/fitness-bg.jpg);
+background: url(./img/fitness-bg.webp);
 background-size: 100%;
 }
 
 .slide:nth-child(2){
-    background-image: url(./img/free-bg.jpg);
+    background-image: url(./img/free-bg.webp);
 }
 
 .slide:nth-child(3){
-    background-image: url(./img/yoga-bg.jpg);
+    background-image: url(./img/yoga-bg.webp);
 }
 
 .slide:nth-child(4){
-    background-image: url(./img/boxing-bg.jpg);
+    background-image: url(./img/boxing-bg.webp);
 }
 
 .slide {
@@ -326,7 +326,7 @@ background-size: 100%;
     background-position: 10% 40%; */
     /* height: 100vh;
     width: 100vw; */
-    background-image: url(./img/fitness-model.png);
+    background-image: url(./img/fitness-model.webp);
     /* background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center center;
@@ -339,16 +339,16 @@ background-size: 100%;
 
 
 .model-2 {
-    background-image: url(./img/free-model.png);
+    background-image: url(./img/free-model.webp);
 }
 
 .model-3 {
-    background-image: url(./img/yoga-model.png);
+    background-image: url(./img/yoga-model.webp);
     background-position: 55% center;
 }
 
 .model-4 {
-    background-image: url(./img/boxing-model.png);
+    background-image: url(./img/boxing-model.webp);
     background-position: 30% center;
 }
 
@@ -456,10 +456,11 @@ background-size: 100%;
 .slide .content h1 {
     font-size: 5rem;
     font-weight: 700;
+    letter-spacing: -0.25rem !important;
     color: var(--font-colour-dark);
     -webkit-text-stroke: 1px var(--font-colour-white);
     opacity: 0;
-    letter-spacing: -6px;
+    /* letter-spacing: -6px; */
     /* animation: captionAnimation .8s ease-in-out forwards;
     animation-delay: .6s; */
     animation: 767.016ms var(--cubic) 0s 1 normal forwards running captionAnimation;
