@@ -1,3 +1,4 @@
+
 /* ======= Variables, Resets and Globals .:. ====== */
 :root {
     --font-colour: #313131;
@@ -14,6 +15,23 @@
     --translateX-from: -300px;
     --translateX-to: -140px;
 
+
+    --red: #03ccf9  ;
+    /* #f9032f  red*/
+    /* f9a303  orange*/
+    /* 03ccf9  blue*/
+    --redGradient:  linear-gradient(45deg, #006fc4, #03ccf9);
+    /* --black: rgb(31, 17, 48); */
+    --black: #8348ad; 
+        /* purple background */
+    --black-darker: #553090;
+    --white: rgb(255, 255, 255);
+
+    /* --cubic: cubic-bezier(.14, .7,.35, .76); */
+    --cubic: cubic-bezier(.52,.03,.33,.97); 
+            /* in-out */
+    /* --cubic: cubic-bezier(.64,.02,.33,.97); */
+            /* ease out */
 }
 
 
@@ -58,12 +76,6 @@ nav {
     z-index: 98;
 }
 
-section {
-    background: var(--colour-blue);
-    width: 100vw;
-    height: 25vh;
-}
-
 .loading-screen {
     width: 100vw;
     height: 100vh;
@@ -74,6 +86,161 @@ section {
     justify-content: center;
     align-items: center;
 }
+
+
+/* NAVBAR SECTION */
+
+.navbar {
+    background: var(--black);
+    height: 60px;
+    padding:  0.5rem calc((100vw - 1100px) / 2);
+            /* add to Anki , 5*s - padding*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    border-bottom: 4px solid var(--colour-blue);
+}
+
+.navbar__logo {
+    font-family: 'Rubik';
+    color: var(--white);
+    text-decoration: none;
+    padding: 0rem 1rem;    
+    font-size: 1.5rem;
+    font-weight: bold;
+            /* add to Anki */
+}
+
+.navbar__logo span {
+    /* font-style: italic; */
+        /* add to Anki */
+    /* color: var(--red); */
+    font-weight: 300;
+    margin-left: -6px;
+    font-family: 'Poppins';
+}
+
+.navbar__menu {
+    padding-right: 1rem;
+    position: relative;
+    max-width: 60%;
+    width: 94vmin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__menu .button,
+.button {
+    /* background-color: var(--white); */
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+            /* add to Anki */
+    border: 2px solid var(--white);
+}
+
+.navbar__menu .button:hover {
+            /* add to Anki , 5*s - pseudo selector */
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.navbar__link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0rem 1rem;
+    transition: color 300ms ease-in-out;
+}
+
+.navbar__link:hover {
+    color: var(--red);
+    outline: 0.1rem var(--red);
+}
+
+
+@media  screen and (max-width: 768px) {
+    body.active{
+                /* add to Anki, tag plus class selector*/        
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }             /* related to JS code */
+
+
+    .navbar__link {
+        display: flex;
+        transition: color 300ms ease-in-out;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 100px);
+                /* add to Anki */
+        position: absolute;
+        width: 100%;
+        top: -1000px; 
+                /* hides the menu */
+        align-items: center;
+        opacity: 0;
+        transition: 
+            /* top 200ms ease-in,  */
+            opacity 300ms ease-in-out;
+                        /* ## add to Anki, multiple properties */
+    }
+
+    .navbar__menu .navbar__link {
+        height: auto;
+    }
+
+    .navbar__menu.active {
+        top: 99%;               /* reveals the menu */
+        opacity: 1;
+        z-index: 99;
+        height: 100vh;
+                /* add to Anki, relative units */
+        font-size: 1.5rem;
+        background: var(--black);
+    } 
+            /* related to JS code */
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 300ms ease-in-out;
+            /* add to Anki,  3*s - ease*/
+        background: var(--white);
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 23%;
+        right: 4%;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+        /* transform: translateX(-1000px) */
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+    /* END OF MEDIA QUERIES */
+
 
 /* ======= Slides ======== .:. */
 
@@ -111,9 +278,9 @@ background-size: 100%;
     background-size: cover;
     position: absolute;
     /* animation: sliding 2s ease; */
-    animation: 1952.5ms ease 0ms 1 normal none running sliding;
+    animation: 1952.5ms var(--cubic) 0ms 1 normal none running sliding;
     display: none;
-    transition: transform 2 ease;
+    transition: transform 2 var(--cubic);
 }
 
 .slide.active {
@@ -146,6 +313,10 @@ background-size: 100%;
     width: 100%;
     position: absolute;
     left: 0;
+
+    opacity: 0;
+    animation: imageAnimation .8s var(--cubic) forwards;
+    animation-delay: .25s;
 }
 
 .model-1 {
@@ -164,34 +335,24 @@ background-size: 100%;
     position: absolute;
     left: 0; */
     background-position: 30% center;
-    opacity: 0;
-    animation: imageAnimation .8s ease-in-out forwards;
-    animation-delay: .25s;
 }
 
 
 .model-2 {
     background-image: url(./img/free-model.png);
-    opacity: 0;
-    animation: imageAnimation .8s ease-in-out forwards;
-    animation-delay: .25s;
 }
 
 .model-3 {
     background-image: url(./img/yoga-model.png);
     background-position: 55% center;
-    opacity: 0;
-    animation: imageAnimation .8s ease-in-out forwards;
-    animation-delay: .25s;
 }
 
 .model-4 {
     background-image: url(./img/boxing-model.png);
     background-position: 30% center;
-    opacity: 0;
-    animation: imageAnimation .8s ease-in-out forwards;
-    animation-delay: .25s;
 }
+
+/* === Animations === ..: */
 
 @keyframes imageAnimation {
     from {
@@ -223,33 +384,28 @@ background-size: 100%;
     width: 1000px;
     position: absolute;
     opacity: 0;
+
+    animation: shapeAnimation2 .6s var(--cubic) forwards;
+    animation-delay: 1.2s;
 }
 
 .shape-1 {
     transform: translateX(var(--translateX-from)) translateY(var(--translateY-from));
-    animation: shapeAnimation2 .6s ease-out forwards;
-    animation-delay: 1.2s;
 }
 
 
 .shape-2 {
     transform: translateX(var(--translateX-from)) translateY(var(--translateY-from));
-    animation: shapeAnimation2 .6s ease-out forwards;
-    animation-delay: 1.2s;
 }
 
 .shape-3 {
     transform: translateX(var(--translateX-from)) translateY(var(--translateY-from));
-    animation: shapeAnimation2 .6s ease-out forwards;
-    animation-delay: 1.2s;
     /* filter: hue-rotate(150deg); */
     background-repeat: repeat;
 }
 
 .shape-4 {
     transform: translateX(var(--translateX-from)) translateY(var(--translateY-from));
-    animation: shapeAnimation2 .6s ease-out forwards;
-    animation-delay: 1.2s;
     /* filter: hue-rotate(150deg); */
     background-repeat: repeat;
 }
@@ -306,7 +462,7 @@ background-size: 100%;
     letter-spacing: -6px;
     /* animation: captionAnimation .8s ease-in-out forwards;
     animation-delay: .6s; */
-    animation: 767.016ms ease-in-out 0s 1 normal forwards running captionAnimation;
+    animation: 767.016ms var(--cubic) 0s 1 normal forwards running captionAnimation;
     animation-delay: 528.5340314136125ms;
         /* 10*s - after animation refined w/ Chrome Dev tools */
 }
@@ -317,14 +473,15 @@ background-size: 100%;
     font-weight: 100;
     margin: 5px 0 30px;
     color: var(--font-colour-white);
-    background-color: var(--colour-blue);
+    /* background-color: var(--colour-blue); */
+    background: linear-gradient(30deg, var(--black), var(--black-darker));
     box-shadow: var(--shadow-2);
     padding: 10px 8px;
     text-align: right;
     opacity: 0;
     /* animation: captionAnimationOpposite .5s ease-in-out forwards;
     animation-delay: .4s; */
-    animation: 752.88ms ease-in-out 0s 1 normal forwards running captionAnimationOpposite;
+    animation: 752.88ms var(--cubic) 0s 1 normal forwards running captionAnimationOpposite;
     animation-delay: 647.3821989528795ms;
 }
 
@@ -339,7 +496,7 @@ background-size: 100%;
     /* margin: -40px 0; */
     margin-bottom: 30px;
     padding: 0 10px;
-    animation: captionAnimation .8s ease-in-out forwards;   
+    animation: captionAnimation .8s var(--cubic) forwards;   
     animation-delay: .7s;
 }
 
@@ -351,7 +508,7 @@ background-size: 100%;
     opacity: 0;
     /* animation: captionAnimation .5s ease-in-out forwards;   
     animation-delay: 1.1s; */
-    animation: 846.335ms ease-in-out 0s 1 normal forwards running captionAnimation;
+    animation: 846.335ms var(--cubic) 0s 1 normal forwards running captionAnimation;
     animation-delay: 775.6544502617801ms;
 }
 
@@ -460,12 +617,111 @@ background-size: 100%;
     margin: 0;
 }
 .slides .indicatorContainer > div.active {
-    background-color: var(--colour-blue);
+    background-color: var(--black);
 }
 .slides .indicatorContainer > div:hover {
     background-color: var(--colour-yellow);
     border: 2px solid var(--font-colour);
 }
+
+/* ======  Sections ====== .:.*/
+
+.section2 {
+    background: var(--white);
+    width: 100vw;
+    height: 50vh;
+    border-top: 8px solid var(--colour-blue);
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    align-items: center;
+}
+
+.section2 h1 {
+    color: var(--black);
+    font-family: 'Rubik';
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.section2 p {
+    width: 60%;
+    color: var(--font-colour);
+}
+
+.section2__button {
+    background: var(--black);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    margin-top: 2rem
+}
+
+
+
+/* FOOTER SECTION */
+.footer {
+    padding: 5rem calc((100vw - 1100px) / 2);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+            /* add to Anki */
+    color: var(--white);
+    background: var(--black);
+}
+
+.footer__descr {
+    padding: 0 2rem;
+}
+
+.footer__descr h1 {
+    margin-bottom: 2rem;
+    color: var(--red);
+    font-size: 1.6rem;
+}
+
+.footer__descr p {
+    margin-bottom: 1rem;
+}
+
+#phone {
+    font-weight: bold;
+            /* add to Anki */    
+    font-size: 1.2rem;
+}
+
+.footer__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+                /* add to Anki, 1fr 1fr*/    
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+.footer__title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.footer span {
+    font-weight: 300;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: hsl(0, 0%, 80%);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    transition: 300ms ease-in-out;
+}
+
+.footer__link:hover {
+    color: var(--red);
+}
+
 
 /* ======  Mobile Responsive  ====== .:.*/
 
