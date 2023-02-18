@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- <div class="loading-screen">
+    <div class="loading-screen">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="loader">
             <g transform="translate(20 50)">
             <circle cx="0" cy="0" r="6" fill="#008fd5">
@@ -34,7 +34,7 @@
             </circle>
             </g>
         </svg>
-    </div> -->
+    </div>
 
     <header>
         <!-- Navbar Section-->
@@ -61,8 +61,10 @@
 
     </header>
     <!-- ===== Slides ======  ..: -->
-    <main>
-        <div class="slides">
+    <main data-scroll-container >
+        <div
+            data-scroll-section 
+            class="slides">
             <div class="slide active">
                 <div class="slideContainer">
                     <!-- <div class="shape-1"></div> -->
@@ -135,12 +137,24 @@
             </div>
         </div>
     
-        <section class="section2">
-            <h1>We're Different. That's A Good Thing.</h1>
-            <p>She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. </p>
-            <a href='#' class="button section2__button">See For Yourself</a>
+        <section
+            data-scroll-section
+            class="section2">
+            <h1 
+                data-scroll 
+                data-scroll-speed="2"
+                data-scroll-direction="horizontal" >
+                We're Different. That's A Good Thing.</h1>
+            <p data-scroll data-scroll-speed="1">She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. </p>
+            <a
+                data-scroll
+                data-scroll-speed="1"
+                href='#' class="button section2__button">See For Yourself</a>
         </section>
-        <section class="section3"></section>
+        <section
+            data-scroll 
+            data-scroll-section
+            class="section3"></section>
     </main>
 
     <footer class="footer">
@@ -172,6 +186,28 @@
             </div>
         </div>
     </footer>
+
+        <!-- ============= Javascript .:.   =============== -->
+        <script src="./js/locomotive-scroll.min.js"></script>
+        <script>
+            (function () {
+                var scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                smartphone: {
+                    smooth: true,
+                    multiplier: 1
+                },
+                tablet: {
+                    smooth: true,
+                    multiplier: 1
+                },
+                lerp: 0.09,
+                multiplier: 4
+                })
+    
+            })();
+        </script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -103,12 +103,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
         // gotoSlide(firstDot)
 
-    }, 5000)
+    }, 4000)
     
     setTimeout( () => {
         const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
                 // add to Anki, 5*s - selector
         gotoSlide(firstDot)
         resetAutoplay()
-    }, 5000)
+    }, 4000)
 })
