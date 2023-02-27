@@ -6,7 +6,7 @@ const prevBtn = document.querySelector('.prev')
 const nextBtn = document.querySelector('.next')
 
 // counter variable
-let index = 0
+let index = slides.length - 1
 
 //  previous and next button functionality ..: 
 prevBtn.addEventListener( 'click', () => prevSlide() )
@@ -95,20 +95,50 @@ function resetAutoplay() {
 }
 
 
+//  ========  Reveal on scroll ..:  ==========
+let int = 100;
+
+const sr = ScrollReveal({
+    distance:'40px',
+    duration: 2800,
+    // distance: '60px',
+    // duration: 2800,
+    reset: true
+})
+
+sr.reveal(`.section2-p, .section__features, .footer__links, .footer__descr, .section2__button`, {
+    origin: 'top',
+    interval: int,
+})
+
+sr.reveal(`.section__image`, {
+    origin: 'left',
+})
+
+sr.reveal(`.section2-h1, .section__text__link, .section__text`, {
+    origin: 'right',
+    interval: int,
+}) 
+
 // === Remove loading screen ..: === 
 const overlay = document.querySelector('.loading-screen')
+const body = document.querySelector('body')
+
 document.addEventListener('DOMContentLoaded', ()=>{
     setTimeout( ()=> {
-        overlay.style.display = 'none'
+        overlay.style.opacity = '0'
         // const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
         // gotoSlide(firstDot)
+        window.scrollTo(0,0)
+        body.style.overflowY = 'auto';
+        overlay.style.display = 'none'
 
-    }, 4000)
+    }, 1000)
     
     setTimeout( () => {
         const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
                 // add to Anki, 5*s - selector
         gotoSlide(firstDot)
         resetAutoplay()
-    }, 4000)
+    }, 1000)
 })

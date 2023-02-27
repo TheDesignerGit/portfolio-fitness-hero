@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 5 - Slider</title>
+    <link rel="shortcut icon" href="./img/favicon.JPG" type="image/x-icon">
     <!-- ==== Googles Fonts , Icons, CSS ==== -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&family=Rubik:wght@300;400;500&family=Work+Sans:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&family=Rubik:wght@300;400;500&family=Work+Sans:wght@100;300;600&family=Comfortaa&family=Varela+Round&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:wght@400;600&family=Rubik:wght@300;400;500&family=Work+Sans:wght@100;300;600&display=swap" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/01f099256f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/scrollreveal"></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -51,9 +54,9 @@
 
             <div class="navbar__menu">
                 <div>
-                    <a href="#services" class="navbar__link">Services</a>
+                    <a href="#features" class="navbar__link">Features</a>
+                    <a href="#locate" class="navbar__link">Locate</a>
                     <a href="#plans" class="navbar__link">Plans</a>
-                    <a href="#team" class="navbar__link">Trainers</a>
                 </div>
                 <a href="#" class="navbar__link button">Join Today</a>
             </div>
@@ -61,10 +64,8 @@
 
     </header>
     <!-- ===== Slides ======  ..: -->
-    <main data-scroll-container >
-        <div
-            data-scroll-section 
-            class="slides">
+    <main>
+        <div class="slides">
             <div class="slide active">
                 <div class="slideContainer">
                     <!-- <div class="shape-1"></div> -->
@@ -137,24 +138,65 @@
             </div>
         </div>
     
-        <section
-            data-scroll-section
-            class="section2">
-            <h1 
-                data-scroll 
-                data-scroll-speed="2"
-                data-scroll-direction="horizontal" >
-                We're Different. That's A Good Thing.</h1>
-            <p data-scroll data-scroll-speed="1">She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. </p>
-            <a
-                data-scroll
-                data-scroll-speed="1"
-                href='#' class="button section2__button">See For Yourself</a>
+        <section class="section2">
+            <h1 class="section2-h1">We're Different. That's A Good Thing.</h1>
+            <p class="section2-p">She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. She sells sea shells by the sea shore. Peter Piper picked a peck of pickled peppers. She sells sea shells by the sea shore. The quick brown fox jumps over the lazy dog. </p>
         </section>
-        <section
-            data-scroll 
-            data-scroll-section
-            class="section3"></section>
+        <section class="section3" id="features">
+            <article class="container">
+                <div class="section__image-container">
+                    <div class="section__image"></div>
+                </div>
+                <div class="section__text">
+                    <h2>Studio Classes Included</h2>
+                    <p>Top level classes taught by rockstar instructors. Yoga, the other one that isn't quite Yoga but you also get sweaty. We got them all.</p>
+                    <a href="#" class="section__text__link">Learn More</a>
+                </div>
+            </article>
+            <article class="container variation">
+                <div class="section__image-container">
+                    <div class="section__image"></div>
+                </div>
+                <div class="section__text">
+                    <h2>Virtual & Personal Training</h2>
+                    <p>Meet up with our coaches at the gym or from the comfort of your home. These are rockstar coaches, so you can be sure they won't judge your furniture choices.</p>
+                    <a href="#" class="section__text__link">Learn More</a>
+                </div>
+            </article>
+        </section>
+        <section class="section5" id="locate">
+            <article class="container"> 
+                <h2 class="section5-h2">Find Your Local Gym</h2>
+                <form action="" class="section__form">
+                    <a class="section__form__button">
+                        <i class="fa-regular fa-circle-dot"></i>
+                    </a>
+                    <input type="text" name="" id="" placeholder="Enter your postcode" class="section__form__input">
+                </form>
+            </article>
+        </section>
+        <section class="section4">
+            <article class="container" id="plans">
+                <div class="section__features">
+                    <i class="fa-regular fa-chess-knight"></i>
+                    <p>Enjoy encouragement and accountability to keep you motivated</p>
+                </div>
+                <div class="section__features">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p>Enjoy encouragement and accountability to keep you motivated</p>
+                </div>
+                <div class="section__features">
+                    <i class="fa-regular fa-hand-peace"></i>
+                    <p>Enjoy encouragement and accountability to keep you motivated</p>
+                </div>
+                <div class="section__features">
+                    <i class="fa-regular fa-images"></i>
+                    <p>Enjoy encouragement and accountability to keep you motivated</p>
+                </div>
+            </article>
+            <a href='#' class="button section2__button">See For Yourself</a>
+        </section>
+        <section class="section6"></section>
     </main>
 
     <footer class="footer">
@@ -162,7 +204,7 @@
             <div class="footer__descr">
                 <h1>Siya<span>Jima</span></h1>
                 <p>Luxury fitness gym located in downtown Jozi.</p>
-                <p id="phone">555-123-4567</p>
+                <p id="phone">071-123-4567</p>
             </div>
             <div class="footer__links">
                 <h2 class="footer__title">Contact Us</h2>
@@ -187,27 +229,7 @@
         </div>
     </footer>
 
-        <!-- ============= Javascript .:.   =============== -->
-        <script src="./js/locomotive-scroll.min.js"></script>
-        <script>
-            (function () {
-                var scroll = new LocomotiveScroll({
-                el: document.querySelector('[data-scroll-container]'),
-                smooth: true,
-                smartphone: {
-                    smooth: true,
-                    multiplier: 1
-                },
-                tablet: {
-                    smooth: true,
-                    multiplier: 1
-                },
-                lerp: 0.09,
-                multiplier: 4
-                })
+    <!-- ============= Javascript .:.   =============== -->
     
-            })();
-        </script>
-    <script src="script.js"></script>
 </body>
 </html>
