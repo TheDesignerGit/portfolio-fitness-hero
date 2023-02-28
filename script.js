@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // gotoSlide(firstDot)
         window.scrollTo(0,0)
         body.style.overflowY = 'auto';
-        overlay.style.display = 'none'
+        // overlay.style.display = 'none'
 
     }, 1000)
     
