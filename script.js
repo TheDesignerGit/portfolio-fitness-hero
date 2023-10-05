@@ -1,3 +1,19 @@
+const lenis = new Lenis({
+    smoothTouch: true
+})
+
+lenis.on('scroll', (e) => {
+    // console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+
 // utilities & globals  ..: 
 
 // selector variables
@@ -101,9 +117,7 @@ let int = 100;
 const sr = ScrollReveal({
     distance:'40px',
     duration: 2800,
-    // distance: '60px',
-    // duration: 2800,
-    reset: true
+    // reset: true
 })
 
 sr.reveal(`.section2-p, .section__features, .footer__links, .footer__descr, .section2__button`, {
@@ -113,6 +127,7 @@ sr.reveal(`.section2-p, .section__features, .footer__links, .footer__descr, .sec
 
 sr.reveal(`.section__image`, {
     origin: 'left',
+    interval: int,
 })
 
 sr.reveal(`.section2-h1, .section__text__link, .section__text`, {
@@ -124,8 +139,8 @@ sr.reveal(`.section2-h1, .section__text__link, .section__text`, {
 const overlay = document.querySelector('.loading-screen')
 const body = document.querySelector('body')
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    setTimeout( ()=> {
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout( () => {
         overlay.style.opacity = '0'
         // const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
         // gotoSlide(firstDot)
@@ -133,12 +148,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         body.style.overflowY = 'auto';
         // overlay.style.display = 'none'
 
-    }, 1000)
+    }, 2000)
     
     setTimeout( () => {
         const firstDot = document.querySelector(".indicatorContainer > div:nth-child(1)")
                 // add to Anki, 5*s - selector
         gotoSlide(firstDot)
         resetAutoplay()
-    }, 1000)
+    }, 2000)
 })

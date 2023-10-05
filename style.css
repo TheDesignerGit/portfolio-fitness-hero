@@ -72,7 +72,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -520,7 +520,7 @@ background-size: 100%;
     font-size: clamp(7rem, 25vmin, 15rem);
         /* add to Anki, 3*s -  */
     font-weight: 100;
-    letter-spacing: clamp(-1.05rem, -1.05vmin ,0.45rem) !important;
+    letter-spacing: clamp(-1.05rem, -0.75vmin ,0.45rem) !important;
 
     /* font-size: 5rem; */
     /* font-weight: 700; */
@@ -536,7 +536,7 @@ background-size: 100%;
     animation-delay: 528.5340314136125ms;
         /* 10*s - after animation refined w/ Chrome Dev tools */
 
-    text-shadow: 1px 1px 0 var(--font-colour-white), -1px -1px 0 var(--font-colour-white), 1px -1px 0 var(--font-colour-white), -1px 1px 0 var(--font-colour-white), 1px 1px 0 var(--font-colour-white); 
+    text-shadow: 1px 1px 0 var(--font-colour-white), -1px -1px 0 var(--font-colour-white), 1px -1px 0 var(--font-colour-white), -1px 1px 0 var(--font-colour-white), 1px 1px 0 var(--font-colour-white), 0 20px 25px rgba(21, 12, 36, 0.4); 
 }
 
 .slide .content article p,
@@ -1039,7 +1039,6 @@ section.section3 .variation .section__text {
     .slides .controls,
     .indicatorWrapper {
         opacity: 0;
-        /* display: none; */
     }
 
     
@@ -1057,11 +1056,9 @@ section.section3 .variation .section__text {
 
 
 
-/* @media screen and (min-width: 2560px) { 
-
-} */
 
 @media screen and (min-width: 1440px) { 
+        /* add to Anki, 5 */
     .slideContainer {
         width: 100%;
         max-width: 1000px;
